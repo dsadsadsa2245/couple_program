@@ -16,6 +16,12 @@
 4.git remote add <origin> <url> - это команда для того чтобы связать ваш локальный репо с удаленым репо в гитхабе
 5. git push <origin> <main> - команда отправки всех ваших изменений на удаленый репо
 """
+#___________________________________________________________________________________
+"""1)git init
+        2)git add .
+        3)git commit -m ''
+4)git remote add origin <url>
+        5)git push origin main"""
 #
 # daniel@daniel-HP-250-G8-Notebook-PC:~/Рабочий стол/обучение$ git --version
 # git version 2.34.1
