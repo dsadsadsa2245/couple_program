@@ -21,7 +21,7 @@
         2)git add .
         3)git commit -m ''
 4)git remote add origin <url>
-        5)git push origin main"""
+        5)git push origin master"""
 #
 # daniel@daniel-HP-250-G8-Notebook-PC:~/Рабочий стол/обучение$ git --version
 # git version 2.34.1
