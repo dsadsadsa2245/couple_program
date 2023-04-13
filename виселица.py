@@ -1,1 +1,2 @@
-print(144**0.5)
+string='hello'
+print(len(string))
