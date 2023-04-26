@@ -1,2 +1,5 @@
-string='hello'
-print(len(string))
+name=input()
+if name=='Atai':
+    print("You are loser")
+else:
+    print("А ты крутой")

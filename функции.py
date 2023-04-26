@@ -6,7 +6,16 @@ num2 = 16
 num3 = 28
 num4 = 1154
 num5 = 31
-
+    for one_car in each_car:
+        a=one_car.find('a').get('href')
+        a=f'https://www.mashina.kg{a}'
+        list.append(a)
+    for dvd in list:
+        bad_html=get_html(dvd)
+        good_html=get_soup(bad_html)
+        df=good_html.find('div',class_='price-dollar')
+        print(df)
+        # df - это все цены
 
 # print({'num': num1, '2': num1 ** 2, '3': num1 ** 3, '100': num1 / 100})
 # print({'num': num2, '2': num2 ** 2, '3': num2 ** 3, '100': num2 / 100})
