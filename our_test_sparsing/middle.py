@@ -47,24 +47,7 @@ def all_cars(normhtml):
             print()
             print(description.text.strip())
         # df - это все цены
-def prepare_csv():
-    with open('deputyy.csv','w') as file:
-        writer=csv.writer(file)
-        writer.writerow(['model','price','description'])
 
-
-def write_to_csv(data):
-    with open('deputyy.csv','a') as file:
-        writer=csv.writer(file)
-        writer.writerow([data['model'],data['price'],data['description']])
-def make_all(link):
-    data=all_cars(link)
-    write_to_csv(data)
-def main():
-    prepare_csv()
-
-
-    
 url='https://www.mashina.kg/'
 html=get_html(url)
 normhtml=get_soup(html)
