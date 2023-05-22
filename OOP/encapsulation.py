@@ -98,3 +98,4 @@ obj = Person('Dan', 15)
 print(obj.name())
 obj.set_age(5)
 obj.age()
+d

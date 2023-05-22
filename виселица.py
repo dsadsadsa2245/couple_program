@@ -228,38 +228,179 @@ from abc import ABC, abstractmethod, abstractproperty
 # !!!!!
 # обязательное условие: создание абстрактного метода
 # !!!!!
-class Planet(ABC):
-    def __init__(self, orbit):
-        self.orbit = orbit
-    @abstractmethod
-    def get_age(self,earth_age):
-        ...
+# list_ = ['hello', 23, 56, 'world',
+# 928, 'Makers', 456, 'word', 223, 89, 'bootcamp', 'coding']
+# dict_={}
+# a=sorted(list_,key=str)
+# z=0
+# from functools import reduce
+# while z!=6:
+#     z += 1
+#     xc=reduce(lambda a,b)
+# print(a)
+# def filter_comment(comment:str,banlist=[]) -> None:
+#     comment=comment.lower()
+#     from string import punctuation
+#     symbols=list(punctuation)
+#     a=list(filter(lambda x: True if x not in symbols else False,comment))
+#     print(a)
+# filter_comment('привет,тпавое творчество говно!',banlist=['тупой','баран','твое','говно'])
+# def filter_comment(comment: str, banlist=[]) -> None:
+#     # Удаление лишних символов из комментария
+#     filtered_comment = ''.join(c.lower() for c in comment if c.isalpha() or c.isspace())
+#     print(filtered_comment)
+#
+#     # Разделение комментария на отдельные слова
+#     words = filtered_comment.split()
+#
+#     # Проверка каждого слова на наличие в списке запрещенных слов
+#     for word in words:
+#         if word in banlist:
+#             raise ValueError(
+#                 "Ваш комментарий отправлен на перепроверку, так как, возможно, содержит неблагоприятный контекст")
+#
+#
+# # Примеры использования
+# try:
+#     filter_comment('Hello, world', ['hello'])
+#     print("Комментарий не содержит запрещенных слов")
+# except ValueError as e:
+#     print(str(e))
+#
+# try:
+#     filter_comment('HelloWorld', ['hello'])
+#     print("Комментарий не содержит запрещенных слов")
+# except ValueError as e:
+#     print(str(e))
+#
+# try:
+#     filter_comment('ochocientos ochenta y ocho')
+#     print("Комментарий не содержит запрещенных слов")
+# except ValueError as e:
+#     print(str(e))
+#
+# try:
+#     filter_comment('I love this recipe', ['hate', 'unlike', "liken't"])
+#     print("Комментарий не содержит запрещенных слов")
+# except ValueError as e:
+#     print(str(e))
+#
+# try:
+#     filter_comment('Dis? recipe. is i !!UNLike!?!! really much!', ['hate', 'unlike', "liken't"])
+#     print("Комментарий не содержит запрещенных слов")
+# except ValueError as e:
+#     print(str(e))
+# -----------------------------------------------
+# Dollar.
+# Создайте функцию dollarize, которая принимает дробное число (float) и переводит его в
+# долларизованный формат:
+# dollarize(123456.78901) -> "$123,456.80"
+# dollarize(-123456.7801) -> "-$123,456.78"
+# dollarize(1000000) -> "$1,000,000"
+# Создайте класс MoneyFmt, который содержит один единственный атрибут amount и 4 метода:
+# init - инициализирует значение атрибута amount
+# update - задаёт объекту новое значение amount
+# repr - возвращает значение float
+# str - метод, который реализует логику функции dollarize()
+# //Вывод должен выглядеть следующим образом:
+# cash = MoneyFmt(12345678.021)
+# print(cash) -- выводит "$12,345,678.02"
+# cash.update(100000.4567)
+# print(cash) -- выводит "$100,000.46"
+# cash.update(-0.3)
+# print(cash) -- выводит "-$0.30"
+# repr(cash) -- выводит -0.3
 
-
-class Venus(Planet):
-    def __init__(self):
-        super().__init__(225)
-    def get_age(self,earth_age):
-        return f"На венере вам - {earth_age*365//self.orbit*365} дней"
-
-
-class Mercury(Planet):
-    def __init__(self):
-        super().__init__(88)
-    def get_age(self,earth_age):
-        return f"На меркурии вам - {earth_age*365//self.orbit*365*24} часа"
-
-
-class Jupiter(Planet):
-    def __init__(self):
-        super().__init__(12)
-    def get_age(self,earth_age):
-        return f"На юпитере вам - {earth_age*365//self.orbit} лет"
-
-
-a = Venus()
-b = Mercury()
-c = Jupiter()
-g=[a,b,c]
-for x in g:
-    print(x.get_age(8))
+# def dollarize(num):
+#     num=round(num,2)
+#     numdigit=str(num).split(".")[0]
+#     numfloat=str(num).split(".")[1]
+#     numfg=numdigit
+#     if len(numdigit)%3==0:
+#         while len(numdigit)!=0:
+#             numfg=numfg.replace(numfg[:3],'')
+#             numdfdgs=[x for x in numdigit]
+#             numdfdgs.insert(3)
+#
+#
+# dollarize(123456789.021956546534)
+# class MyString(str):
+#     def __init__(self,snhg):
+#         self.snhg=snhg
+#     def append(self, string):
+#         self.snhg = self + string
+#
+#     def pop(self):
+#         popped_char = self[-1]
+#         self = self[:-1]
+#         return popped_char
+#
+#
+# # Примеры использования
+# example = MyString('Strif')
+# example.append('hello')
+# print(example.snhg)  # 'Stringhello'
+# print(example.pop())  # 'o'
+# print(example)  # 'Stringhell'
+# def collect_all_possibles(list_: list, num: int) -> list:
+#     list1 = []
+#     for x in list_:
+#         if isinstance(x, list):
+#             list_help = []
+#             for d in x:
+#
+#                 if isinstance(d,str):
+#                     fghj=d*num
+#                     list_help.append(fghj)
+#                 else:
+#                     add = d + num
+#                     list_help.append(add)
+#                     min = d - num
+#                     list_help.append(min)
+#                     mul = num * d
+#                     list_help.append(mul)
+#                     div = d // num
+#                     try:
+#                         div = d // num
+#                         list_help.append(div)
+#                     except Exception:
+#                         pass
+#                     list_help.append(div)
+#                     square = d ** num
+#                     list_help.append(square)
+#             list1.append(list_help)
+#         elif isinstance(x,str):
+#             for df in range(0,num):
+#                 dfg=x*num
+#                 list1.append(dfg)
+#         else:
+#             add = x + num
+#             list1.append(add)
+#             min = x - num
+#             list1.append(min)
+#             mul = num * x
+#             list1.append(mul)
+#             div = x // num
+#             try:
+#                 div = x // num
+#             except Exception:
+#                 pass
+#             list1.append(div)
+#             square = x ** num
+#             list1.append(square)
+#     return list1
+#
+#
+# print(collect_all_possibles(['hello',[8,'hellovojgrtkhnrthl',7]], 2))
+users = [
+  { 'name': 'Jack', 'age': 35, 'work': 'IT-backend developer' },
+  { 'name': 'Helen', 'age': 35, 'work': 'Nurse' },
+  { 'name': 'Bob', 'age': 35, 'work': 'Driver' },
+  { 'name': 'Jessica', 'age': 35, 'work': 'IT-frontend developer' },
+  { 'name': 'Helga', 'age': 35, 'work': 'IT-HR' }
+]
+def func15():
+  for x in users:
+    if "IT" in x['work']:
+      print("danieo")
+func15()
